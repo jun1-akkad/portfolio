@@ -5,7 +5,8 @@ const technics = [
   { name: 'Laravel 11', desc: 'ららべる', url: 'https://laravel.com/' },
   { name: 'Inertia', desc: 'サーバー駆動型 Web アプリを構築するもの', url: 'https://inertiajs.com/' },
   { name: 'Tailwind CSS', desc: 'CSS', url: 'https://tailwindcss.com/' },
-  { name: 'Laravel Telescope', desc: 'デバグ情報をブラウザに表示するツール。開発中に使うと便利', url: 'https://laravel.com/docs/11.x/telescope' },
+  { name: 'Laravel Telescope', desc: 'デバグ情報をブラウザに表示する。開発中に使うと便利', url: 'https://laravel.com/docs/11.x/telescope' },
+  { name: 'Laravel Precognition', desc: 'フロントのバリデーションをバックエンドで行う', url: 'https://laravel.com/docs/11.x/precognition' },
 ]
 </script>
 
