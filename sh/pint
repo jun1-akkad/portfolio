@@ -1,0 +1,30 @@
+#!/bin/bash
+
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
+source "${SCRIPT_DIR}/env"
+
+command="${SCRIPT_DIR}/../vendor/bin/sail exec -T ${LARAVEL_CONTAINER} vendor/bin/pint -v"
+
+params=()
+add_test_param=true
+add_dirty_param=true
+
+for arg in "$@"; do
+  if [[ "$arg" == "exec" ]]; then
+    add_test_param=false
+  elif [[ "$arg" == "all" ]]; then
+    add_dirty_param=false
+  else
+    params+=("$arg")
+  fi
+done
+
+if $add_test_param; then
+  params+=("--test")
+fi
+
+if $add_dirty_param; then
+  params+=("--dirty")
+fi
+
+$command "${params[@]}"
